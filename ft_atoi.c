@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 15:53:04 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/15 16:33:04 by artuda-s         ###   ########.fr       */
+/*   Created: 2024/04/12 17:47:52 by artuda-s          #+#    #+#             */
+/*   Updated: 2024/04/12 17:58:23 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_libft.h"
-
-void *calloc(size_t nitems, size_t size)
+int ft_atoi(const char *str)
 {
-    void *ptr;
+    int result;
+    int sign;    
 
-    ptr = (void *)malloc(nitems * size);
-    if (ptr == NULL)
-        return (NULL);
-    ft_bzero(ptr, size);
-    return (ptr);
+    result = 0;
+    sign = 1;
+    if (*str == '+' || *str == '-')
+    {
+        if (*str == '-')
+            sign = -1;
+        str++;
+    }
+    while(*str && '0' <= *str && *str <= '9')
+    {
+        result = result * 10 + *str - 48;
+        str++;
+    }
+    return (result);
 }

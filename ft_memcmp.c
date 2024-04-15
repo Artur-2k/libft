@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 15:53:04 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/15 16:33:04 by artuda-s         ###   ########.fr       */
+/*   Created: 2024/04/12 17:10:34 by artuda-s          #+#    #+#             */
+/*   Updated: 2024/04/12 17:12:03 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libft.h"
 
-void *calloc(size_t nitems, size_t size)
+int ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-    void *ptr;
+    const char *pstr1;
+    const char *pstr2;
 
-    ptr = (void *)malloc(nitems * size);
-    if (ptr == NULL)
-        return (NULL);
-    ft_bzero(ptr, size);
-    return (ptr);
+    pstr1 = str1;
+    pstr2 = str2;
+    while (n > 0)
+    {
+        if (*pstr1 != *pstr2)
+            return (*pstr1 - *pstr2);
+        pstr1++;
+        pstr2++;
+        n--;
+    }
 }

@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: artuda-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 15:53:04 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/15 16:33:04 by artuda-s         ###   ########.fr       */
+/*   Created: 2024/04/11 16:14:58 by artuda-s          #+#    #+#             */
+/*   Updated: 2024/04/11 16:15:40 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_libft.h"
-
-void *calloc(size_t nitems, size_t size)
+int	ft_isascii(int c)
 {
-    void *ptr;
-
-    ptr = (void *)malloc(nitems * size);
-    if (ptr == NULL)
-        return (NULL);
-    ft_bzero(ptr, size);
-    return (ptr);
+	if (32 <= c && c <= 126)
+		return (1);
+	else
+		return (0);
 }

@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: artuda-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 15:53:04 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/15 16:33:04 by artuda-s         ###   ########.fr       */
+/*   Created: 2024/04/11 15:38:24 by artuda-s          #+#    #+#             */
+/*   Updated: 2024/04/11 15:48:03 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libft.h"
 
-void *calloc(size_t nitems, size_t size)
+void	ft_bzero(void *str, size_t n)
 {
-    void *ptr;
+	unsigned char	*pstr;
 
-    ptr = (void *)malloc(nitems * size);
-    if (ptr == NULL)
-        return (NULL);
-    ft_bzero(ptr, size);
-    return (ptr);
+	pstr = str;
+	while (n > 0)
+	{
+		*pstr = 0;
+		pstr++;
+		n--;
+	}
 }

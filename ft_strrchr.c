@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 15:53:04 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/15 16:33:04 by artuda-s         ###   ########.fr       */
+/*   Created: 2024/04/12 16:30:16 by artuda-s          #+#    #+#             */
+/*   Updated: 2024/04/12 16:53:48 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libft.h"
+#include <stdio.h>
+#include <string.h>
 
-void *calloc(size_t nitems, size_t size)
+char *ft_strrchr(const char *str, int c)
 {
-    void *ptr;
+    int i;
 
-    ptr = (void *)malloc(nitems * size);
-    if (ptr == NULL)
-        return (NULL);
-    ft_bzero(ptr, size);
-    return (ptr);
+    i = ft_strlen((char*)str);
+    str = str + i;
+    while (i >= 0)
+    {
+        if (*str == c)
+            return ((char *)str);
+        str--;
+        i--;
+    }   
+    return (NULL);    
 }
