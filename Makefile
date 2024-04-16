@@ -6,14 +6,14 @@
 #    By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 17:46:54 by artuda-s          #+#    #+#              #
-#    Updated: 2024/04/15 18:58:55 by artuda-s         ###   ########.fr        #
+#    Updated: 2024/04/16 12:37:41 by artuda-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wextra -Wall -Werror
 SRCS = $(wildcard *.c) 
-OBJS = $(SRCS: .c=.o)
+OBJS = $(SRCS:.c=.o)
 BINARY = libft.a
 DEPS = libft.h
 
@@ -32,5 +32,3 @@ fclean: clean
 	rm -f $(BINARY)
 
 re: fclean all
-
-

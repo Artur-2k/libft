@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 17:17:01 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/12 17:47:37 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:57:55 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ char *ft_strnstr(const char *big,	const char *little, size_t len)
     while(little[len_little])
         len_little++;
     if (len_little == 0)
-        return big;
+        return ((char *)big);
     while (*big && len >= len_little)
     {
         i = 0;
         while (big[i] == little[i])
         {
             if (i == len_little - 1)
-            return (big);
+            return ((char *)big);
             i++;
         }
         big++;

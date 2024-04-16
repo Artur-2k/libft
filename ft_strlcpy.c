@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:06:06 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/12 16:27:43 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:54:46 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	srclen;
 
 	i = 0;
-	srclen = ft_strlen(src);
-	if (size < 0)
+	srclen = ft_strlen((char *)src);
+	if (size == 0)
 		return (srclen);
 	while (src[i] && i < size - 1)
 	{

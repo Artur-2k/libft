@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 17:47:52 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/12 17:58:23 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:39:16 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int ft_atoi(const char *str)
         result = result * 10 + *str - 48;
         str++;
     }
-    return (result);
+    return (result * sign);
 }

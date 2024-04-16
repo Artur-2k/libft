@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:06:03 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/12 18:43:17 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:53:09 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int	strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dlen;
 	size_t	slen;
-	int		i;
+	size_t		i;
 
 	i = 0;
 	dlen = ft_strlen(dst);
-	slen = ft_strlen(src);
+	slen = ft_strlen((char *)src);
 	if (dlen >= size)
 		return (dlen + slen);
 	else
