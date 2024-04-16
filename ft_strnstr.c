@@ -6,11 +6,11 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 17:17:01 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/16 12:57:55 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/16 17:04:48 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_libft.h"
+#include "libft.h"
 
 char *ft_strnstr(const char *big,	const char *little, size_t len)
 {

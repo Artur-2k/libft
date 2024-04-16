@@ -6,11 +6,11 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:06:06 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/16 13:49:27 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/16 18:24:20 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_libft.h"
+#include "libft.h"
 
 int	ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -18,7 +18,7 @@ int	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	srclen;
 
 	i = 0;
-	srclen = ft_strlen((char *)src);
+	srclen = ft_strlen(src);
 	if (size == 0)
 		return (srclen);
 	while (src[i] && i < size - 1)

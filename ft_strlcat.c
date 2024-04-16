@@ -6,11 +6,11 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:06:03 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/16 12:53:09 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/16 18:24:15 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_libft.h"
+#include "libft.h"
 
 int	strlcat(char *dst, const char *src, size_t size)
 {
@@ -20,7 +20,7 @@ int	strlcat(char *dst, const char *src, size_t size)
 
 	i = 0;
 	dlen = ft_strlen(dst);
-	slen = ft_strlen((char *)src);
+	slen = ft_strlen(src);
 	if (dlen >= size)
 		return (dlen + slen);
 	else

@@ -6,18 +6,18 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:53:26 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/16 12:51:36 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/16 19:12:38 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_libft.h"
+#include "libft.h"
 
-char *strdup(const char *str)
+char *ft_strdup(const char *str)
 {
     char *pstr;
     size_t i;
 
-    pstr = (char *)malloc(sizeof(char) * (ft_strlen((char *)str) + 1));
+    pstr = (char *)malloc(sizeof(char) * (ft_strlen((const char*)str) + 1));
     if (!pstr)
         return (NULL);
     i = 0;
