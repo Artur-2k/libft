@@ -6,7 +6,7 @@
 #    By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 17:46:54 by artuda-s          #+#    #+#              #
-#    Updated: 2024/04/16 12:37:41 by artuda-s         ###   ########.fr        #
+#    Updated: 2024/04/16 13:48:48 by artuda-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ OBJS = $(SRCS:.c=.o)
 BINARY = libft.a
 DEPS = libft.h
 
+.SILENT:
+
 all: $(BINARY)
 
 $(BINARY): $(OBJS)
@@ -26,9 +28,9 @@ $(BINARY): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-	rm -f $(BINARY)
+	$(RM) $(BINARY)
 
 re: fclean all
