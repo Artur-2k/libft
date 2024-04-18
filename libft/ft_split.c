@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:21:07 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/18 15:08:54 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:41:01 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	**ft_split(const char *s, char c)
 		sarr[i] = ft_substr(s, start, wlen);
 		if (!sarr[i])
 		{
-			ft_free(sarr, i + 1);
+			ft_free(sarr, i);
 			return (NULL);
 		}
 		start += wlen + 1;
@@ -80,7 +80,8 @@ char	**ft_split(const char *s, char c)
 	sarr[i] = NULL;
 	return (sarr);
 }
-/*   #include <stdio.h>
+/*
+#include <stdio.h>
  int main() {
     char str[] = "ola mundo maluco!";
     char charset = ' ';
@@ -91,4 +92,4 @@ char	**ft_split(const char *s, char c)
     	printf("%s\n", result[i]);
     ft_free(result, ft_count_words(str, charset) + 1);
     return 0;
-}   */
+}*/
