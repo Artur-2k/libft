@@ -6,12 +6,11 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:58:59 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/16 19:57:40 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/18 12:18:13 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -36,9 +35,9 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     return (substr);
 }
 
+/* 
 #include <stdio.h>
-
-/* int main(void)
+int main(void)
 {
     const char *str= "Ola mundo!";
 
