@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:21:07 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/18 13:26:15 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:08:54 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static size_t	ft_word_lenght(const char *str, char sep)
 	size_t	len;
 
 	len = 0;
-	while (*str != sep)
+	while (*str != sep && *str)
 	{
 		len++;
 		str++;
@@ -80,7 +80,7 @@ char	**ft_split(const char *s, char c)
 	sarr[i] = NULL;
 	return (sarr);
 }
-/* #include <stdio.h>
+/*   #include <stdio.h>
  int main() {
     char str[] = "ola mundo maluco!";
     char charset = ' ';
@@ -91,4 +91,4 @@ char	**ft_split(const char *s, char c)
     	printf("%s\n", result[i]);
     ft_free(result, ft_count_words(str, charset) + 1);
     return 0;
-} */
+}   */
