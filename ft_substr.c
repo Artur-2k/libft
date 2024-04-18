@@ -11,14 +11,13 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char *substr;
     size_t  i;
-    
-    
+
+
     if ((ft_strlen(s) < start) || *s == 0 )
         return (ft_strdup(""));
     if (len > ft_strlen(s + start))
@@ -31,19 +30,19 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     {
         substr[i] = s[start + i];
         i++;
-    }    
+    }
     substr[i] = 0;
     return (substr);
 }
 
+/*
 #include <stdio.h>
-
-/* int main(void)
+ int main(void)
 {
     const char *str= "Ola mundo!";
 
     printf("%s\n", ft_substr(str, 50, 2));
-    
-    
+
+
     return 0;
 } */
