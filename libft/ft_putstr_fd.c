@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 16:30:16 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/18 12:43:12 by artuda-s         ###   ########.fr       */
+/*   Created: 2024/04/18 12:37:16 by artuda-s          #+#    #+#             */
+/*   Updated: 2024/04/18 13:30:35 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *str, int c)
+void    ft_putstr_fd(char *s, int fd)
 {
-    int i;
+    int n;
 
-    i = ft_strlen(str);
-    str = str + i;
-    while (i >= 0)
-    {
-        if (*str == c)
-            return ((char *)str);
-        str--;
-        i--;
-    }   
-    return (NULL);    
+    n = ft_strlen(s);
+    write(fd, s, n);
 }
+/*
+#include <stdio.h>
+int main()
+{
+    ft_putstr_fd("ola\n", 1);
+    return 0;
+} */

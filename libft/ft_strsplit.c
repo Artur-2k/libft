@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/18 13:21:07 by artuda-s          #+#    #+#             */
+/*   Updated: 2024/04/18 13:26:15 by artuda-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int ft_count_words(const char *str, char sep)
+static int	ft_count_words(const char *str, char sep)
 {
-	int count;
+	int	count;
 
 	if (!*str)
 		return (0);
 	count = 1;
-	while(*str)
+	while (*str)
 	{
 		if (*str == sep && *(str + 1) != 0)
 			count++;
@@ -15,22 +27,23 @@ static int ft_count_words(const char *str, char sep)
 	}
 	return (count);
 }
-static size_t ft_word_lenght(const char *str, char sep)
+
+static size_t	ft_word_lenght(const char *str, char sep)
 {
-	size_t len;
+	size_t	len;
 
 	len = 0;
-	while(*str != sep)
+	while (*str != sep)
 	{
 		len++;
 		str++;
 	}
-	return (len++);
+	return (len);
 }
 
-static void ft_free(char **arr, int n)
+static void	*ft_free(char **arr, int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < n)
@@ -38,16 +51,14 @@ static void ft_free(char **arr, int n)
 		free(arr[i]);
 		i++;
 	}
-	free(arr[i]);
+	free(arr);
+	return (NULL);
 }
-char **ft_split(const char *s, char c)
-{
-	char **sarr;
-	int i;
-	int words;
-	int start;
-	int wlen;
 
+char	**ft_split(const char *s, char c)
+{
+	auto char **sarr;
+	auto int i, words, start, wlen;
 	words = ft_count_words(s, c);
 	sarr = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!sarr)
@@ -58,13 +69,17 @@ char **ft_split(const char *s, char c)
 	{
 		wlen = ft_word_lenght(&s[start], c);
 		sarr[i] = ft_substr(s, start, wlen);
+		if (!sarr[i])
+		{
+			ft_free(sarr, i + 1);
+			return (NULL);
+		}
 		start += wlen + 1;
 		i++;
 	}
 	sarr[i] = NULL;
 	return (sarr);
 }
-
 /* #include <stdio.h>
  int main() {
     char str[] = "ola mundo maluco!";
