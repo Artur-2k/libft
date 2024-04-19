@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:05:19 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/19 18:41:38 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/19 19:17:57 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ typedef struct  s_list
     
 }   t_list;
 
+void ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+int ft_lstsize(t_list *lst);
+t_list *ft_lstnew(void *content);
 t_list *ft_lstlast(t_list *lst);
 void    ft_putchar_fd(char c, int fd);
 int	ft_atoi(const char *str);
