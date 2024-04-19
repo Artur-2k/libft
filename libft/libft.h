@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:05:19 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/18 12:36:10 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:37:44 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # include <stdlib.h>
 #include <unistd.h>
+
+typedef struct  s_list
+{
+    void *content;
+    struct s_list *next;
+    
+}   t_list;
 
 int	ft_atoi(const char *str);
 void	ft_bzero(void *str, size_t n);
@@ -45,5 +52,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 int	tolower(int c);
 int	toupper(int c);
 void ft_putchar_fd(char c, int fd);
+
+
 
 #endif
