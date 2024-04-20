@@ -12,7 +12,7 @@
 
 CC = gcc
 CFLAGS = -Wextra -Wall -Werror
-SRCS = $(wildcard *.c) 
+SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 NAME = libft.a
 DEPS = libft.h
