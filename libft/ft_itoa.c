@@ -6,54 +6,58 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:42:47 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/18 13:42:48 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/20 22:00:29 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_ndigits(int n)
+static int	ft_nchars(int n)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (n == 0)
 		return (1);
+	if (n < 0)
+		count++;
 	while (n)
 	{
 		n /= 10;
-		count ++;
+		count++;
 	}
 	return (count);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *str;
-	int nchars;
-
-	nchars = ft_ndigits(n);
-	if (n < 0)
-		nchars++;
-	str = (char *)malloc(sizeof(char) * (1 + nchars));
+	auto int nchars = ft_nchars(n);
+	auto char *str = (char *)malloc(sizeof(char) * (1 + nchars));
 	if (!str)
 		return (NULL);
+	auto long nb = n;
 	str[nchars] = 0;
-	if (n < 0)
+	if (n == 0)
+	{
+		str[0] = '0';
+		return (str);
+	}
+	if (nb < 0)
 	{
 		str[0] = '-';
-		n *= -1;
+		nb = -nb;
 	}
-	while (n)
+	while (nb)
 	{
-		str[--nchars] = n % 10 + 48;
-		n /= 10;
+		str[--nchars] = nb % 10 + 48;
+		nb /= 10;
 	}
 	return (str);
 }
-/*
-#include <stdio.h>
-int main()
+
+/* #include <stdio.h>
+
+int	main(void)
 {
 	char *str = ft_itoa(123);
 	if (str == NULL)
@@ -61,5 +65,5 @@ int main()
 	else
 		printf("%s\n", str);
 	free(str);
-	return 0;
-} */
+	return (0);
+}   */

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int ft_char_in_str(const char *str, const char c)
+static int	ft_char_in_str(const char *str, const char c)
 {
 	while (*str)
 	{
@@ -23,13 +23,13 @@ static int ft_char_in_str(const char *str, const char c)
 	return (0);
 }
 
-char *ft_strtrim(const char  *s1, const char *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	char *nstr;
+	char	*nstr;
 	size_t	start;
 	size_t	end;
 
-	if(!*s1)
+	if (!*s1)
 		return (ft_strdup(""));
 	start = 0;
 	end = ft_strlen(s1) - 1;
@@ -38,17 +38,16 @@ char *ft_strtrim(const char  *s1, const char *set)
 	while (ft_char_in_str(set, s1[end]))
 		end--;
 	nstr = ft_substr(s1, start, end - start + 1);
-
 	return (nstr);
 }
 
 /* #include <stdio.h>
 
-int main()
+int	main(void)
 {
 	char * str = "xxxxxxxxxxola mundo!xxxxxxxx";
 	char *nstr = ft_strtrim(str, "xyz");
 	printf("%s\n", nstr);
 	free(nstr);
-	return 0;
+	return (0);
 } */

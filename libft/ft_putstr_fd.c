@@ -12,17 +12,18 @@
 
 #include "libft.h"
 
-void    ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    int n;
+	int	n;
 
-    n = ft_strlen(s);
-    write(fd, s, n);
+	n = ft_strlen(s);
+	write(fd, s, n);
 }
 /*
 #include <stdio.h>
-int main()
+
+int	main(void)
 {
-    ft_putstr_fd("ola\n", 1);
-    return 0;
+	ft_putstr_fd("ola\n", 1);
+	return (0);
 } */

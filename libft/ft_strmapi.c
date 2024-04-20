@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:46:36 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/18 16:13:50 by artuda-s         ###   ########.fr       */
+/*   Created: 2024/04/20 22:02:08 by artuda-s          #+#    #+#             */
+/*   Updated: 2024/04/20 22:02:46 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
 	char	*nstr;
+	size_t	i;
+	size_t	slen;
 
-	nstr = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	slen = ft_strlen(s);
+	i = 0;
+	nstr = (char *)malloc(sizeof(char) * (slen + 1));
 	if (!nstr)
 		return (NULL);
-	while (nstr[i])
+	while (i < slen)
 	{
-		nstr[i] = (*f)(i, s[i]);
+		nstr[i] = f(i, s[i]);
 		i++;
 	}
 	nstr[i] = 0;

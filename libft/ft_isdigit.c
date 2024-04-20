@@ -6,11 +6,13 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:51:14 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/18 13:43:19 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/20 18:34:49 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
 	if ('0' <= c && c <= '9')
 		return (1);

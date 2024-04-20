@@ -6,23 +6,23 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:06:03 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/18 12:43:25 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/20 19:07:25 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dlen;
 	size_t	slen;
-	size_t		i;
+	size_t	i;
 
 	i = 0;
 	dlen = ft_strlen(dst);
 	slen = ft_strlen(src);
 	if (dlen >= size)
-		return (dlen + slen);
+		return ((size + slen));
 	else
 	{
 		while (src[i] && i < size - dlen - 1)
@@ -32,5 +32,5 @@ int	ft_strlcat(char *dst, const char *src, size_t size)
 		}
 		dst[dlen + i] = '\0';
 	}
-	return ((int)(dlen + slen));
+	return ((dlen + slen));
 }

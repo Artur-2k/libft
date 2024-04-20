@@ -6,11 +6,13 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:05:57 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/12 15:55:24 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/20 18:40:16 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
 	while (*s != (char)c)
 	{

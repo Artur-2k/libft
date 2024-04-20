@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:21:07 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/18 15:41:01 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/20 22:03:03 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ static int	ft_count_words(const char *str, char sep)
 {
 	int	count;
 
-	if (!*str)
-		return (0);
-	count = 1;
+	count = 0;
+	while (*str == sep)
+		str++;
+	if (*str)
+		count = 1;
 	while (*str)
 	{
-		if (*str == sep && *(str + 1) != 0)
+		if (*str == sep && *(str + 1) != 0 && *(str + 1) != sep)
 			count++;
 		str++;
 	}
@@ -67,6 +69,8 @@ char	**ft_split(const char *s, char c)
 	start = 0;
 	while (i < words)
 	{
+		while (s[start] == c)
+			start++;
 		wlen = ft_word_lenght(&s[start], c);
 		sarr[i] = ft_substr(s, start, wlen);
 		if (!sarr[i])
@@ -74,22 +78,22 @@ char	**ft_split(const char *s, char c)
 			ft_free(sarr, i);
 			return (NULL);
 		}
-		start += wlen + 1;
+		start += wlen;
 		i++;
 	}
 	sarr[i] = NULL;
 	return (sarr);
 }
-/*
-#include <stdio.h>
- int main() {
-    char str[] = "ola mundo maluco!";
-    char charset = ' ';
-    char **result = ft_split(str, charset);
- 	printf("string:%s\n", str);
-    printf("Split result:\n");
-    for (int i = 0; result[i] != NULL; i++)
-    	printf("%s\n", result[i]);
-    ft_free(result, ft_count_words(str, charset) + 1);
-    return 0;
-}*/
+
+/*  int	main(void)
+{
+	char str[] = "ola mundo  maluco!  ";
+	char charset = ' ';
+	char **result = ft_split(str, charset);
+	printf("string:%s\n", str);
+	printf("Split result:\n");
+	for (int i = 0; result[i] != NULL; i++)
+		printf("%s\n", result[i]);
+	ft_free(result, ft_count_words(str, charset) + 1);
+	return (0);
+}  */

@@ -6,11 +6,13 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:06:13 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/12 16:27:57 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/20 18:39:06 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	toupper(int c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
