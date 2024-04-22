@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:21:07 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/20 22:03:03 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:36:15 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	ft_count_words(const char *str, char sep)
 	int	count;
 
 	count = 0;
+	if (!*str)
+		return (count);
 	while (*str == sep)
 		str++;
 	if (*str)
