@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 17:23:14 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/19 17:32:11 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:42:13 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	while (*lst)
 	{
 		ptr = (*lst)->next;
-		del(*lst);
+		del((*lst)->content);
 		free(*lst);
 		*lst = ptr;
 	}

@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:05:19 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/20 18:48:59 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:12:27 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,15 @@ int					ft_isdigit(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstadd_front(t_list **lst, t_list *new);
 void				ft_lstclear(t_list **lst, void (*del)(void *));
-int					ft_lstsize(t_list *lst);
-t_list				*ft_lstnew(void *content);
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstlast(t_list *lst);
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+						void (*del)(void *));
+t_list				*ft_lstnew(void *content);
+int					ft_lstsize(t_list *lst);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
