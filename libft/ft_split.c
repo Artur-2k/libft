@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:21:07 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/22 17:36:15 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:27:33 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,39 +59,53 @@ static void	*ft_free(char **arr, int n)
 	return (NULL);
 }
 
-char	**ft_split(const char *s, char c)
+void	fak_norminette(const char *s, char c, char **sarr, int words)
 {
-	auto char **sarr;
-	auto int i, words, start, wlen;
-	words = ft_count_words(s, c);
-	sarr = (char **)malloc(sizeof(char *) * (words + 1));
-	if (!sarr)
-		return (NULL);
+	int	wlen;
+	int	start;
+	int	i;
+
 	i = 0;
 	start = 0;
 	while (i < words)
 	{
 		while (s[start] == c)
-			start++;
+			(start)++;
 		wlen = ft_word_lenght(&s[start], c);
 		sarr[i] = ft_substr(s, start, wlen);
 		if (!sarr[i])
 		{
 			ft_free(sarr, i);
-			return (NULL);
+			return ;
 		}
 		start += wlen;
-		i++;
+		(i)++;
 	}
 	sarr[i] = NULL;
-	return (sarr);
 }
 
-/*  int	main(void)
+char	**ft_split(const char *s, char c)
 {
-	char str[] = "ola mundo  maluco!  ";
-	char charset = ' ';
-	char **result = ft_split(str, charset);
+	char	**sarr;
+	int		words;
+
+	words = ft_count_words(s, c);
+	sarr = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!sarr)
+		return (NULL);
+	fak_norminette(s, c, sarr, words);
+	return (sarr);
+}
+/*   #include <stdio.h>
+
+int	main(void)
+{
+	char	str[] = "ola mundo  maluco!  ";
+	char	charset;
+	char	**result;
+
+	charset = ' ';
+	result = ft_split(str, charset);
 	printf("string:%s\n", str);
 	printf("Split result:\n");
 	for (int i = 0; result[i] != NULL; i++)
@@ -99,3 +113,19 @@ char	**ft_split(const char *s, char c)
 	ft_free(result, ft_count_words(str, charset) + 1);
 	return (0);
 }  */
+/*
+while (i < words)
+{
+	while (s[start] == c)
+		start++;
+	wlen = ft_word_lenght(&s[start], c);
+	sarr[i] = ft_substr(s, start, wlen);
+	if (!sarr[i])
+	{
+		ft_free(sarr, i);
+		return (NULL);
+	}
+	start += wlen;
+	i++;
+}
+*/
