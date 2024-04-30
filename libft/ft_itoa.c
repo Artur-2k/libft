@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:42:47 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/20 22:00:29 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:33:43 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@ static int	ft_nchars(int n)
 
 char	*ft_itoa(int n)
 {
-	auto int nchars = ft_nchars(n);
-	auto char *str = (char *)malloc(sizeof(char) * (1 + nchars));
+	int		nchars;
+	char	*str;
+	
+	nchars = ft_nchars(n);
+	str = (char *)malloc(sizeof(char) * (1 + nchars));
 	if (!str)
 		return (NULL);
 	auto long nb = n;
