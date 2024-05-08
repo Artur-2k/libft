@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:21:07 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/30 17:27:33 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/05/03 13:48:27 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	*ft_free(char **arr, int n)
 	return (NULL);
 }
 
-void	fak_norminette(const char *s, char c, char **sarr, int words)
+char	**fak_norminette(const char *s, char c, char **sarr, int words)
 {
 	int	wlen;
 	int	start;
@@ -76,12 +76,13 @@ void	fak_norminette(const char *s, char c, char **sarr, int words)
 		if (!sarr[i])
 		{
 			ft_free(sarr, i);
-			return ;
+			return (NULL);
 		}
 		start += wlen;
 		(i)++;
 	}
 	sarr[i] = NULL;
+	return (sarr);
 }
 
 char	**ft_split(const char *s, char c)
@@ -93,7 +94,9 @@ char	**ft_split(const char *s, char c)
 	sarr = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!sarr)
 		return (NULL);
-	fak_norminette(s, c, sarr, words);
+	sarr = fak_norminette(s, c, sarr, words);
+	if (!sarr)
+		return (NULL);
 	return (sarr);
 }
 /*   #include <stdio.h>

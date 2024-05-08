@@ -6,7 +6,7 @@
 /*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:42:47 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/04/30 17:33:43 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/05/08 14:42:01 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,16 @@ char	*ft_itoa(int n)
 {
 	int		nchars;
 	char	*str;
+	long	nb;
 	
 	nchars = ft_nchars(n);
 	str = (char *)malloc(sizeof(char) * (1 + nchars));
 	if (!str)
 		return (NULL);
-	auto long nb = n;
+	nb = n;
 	str[nchars] = 0;
 	if (n == 0)
-	{
 		str[0] = '0';
-		return (str);
-	}
 	if (nb < 0)
 	{
 		str[0] = '-';
