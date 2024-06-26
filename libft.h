@@ -13,8 +13,11 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
+
+# define BUFFER_SIZE 10
 
 typedef struct s_list
 {
@@ -69,5 +72,7 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
+int					ft_atoi_base(char *str, char *base);
+char				*get_next_line(int fd);
 
 #endif

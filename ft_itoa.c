@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: artuda-s <artuda-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: artuda-s < artuda-s@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:42:47 by artuda-s          #+#    #+#             */
-/*   Updated: 2024/05/08 14:42:01 by artuda-s         ###   ########.fr       */
+/*   Updated: 2024/06/23 19:33:56 by artuda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_itoa(int n)
 	int		nchars;
 	char	*str;
 	long	nb;
-	
+
 	nchars = ft_nchars(n);
 	str = (char *)malloc(sizeof(char) * (1 + nchars));
 	if (!str)
