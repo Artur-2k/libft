@@ -1,3 +1,4 @@
+#include "libft.h"
 // Appends a char to a string keeping it null terminated.
 // Returns a new allocated string and frees the old one.
 char	*ft_append_char_to_str(char *str, char c)
